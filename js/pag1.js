@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const todosLosInputs = formulario.querySelectorAll("input");
         let estaVacio = false;
         todosLosInputs.forEach(function(input) {
-            if (input.value.trim() === "") {
-                estaVacio = true; 
+            if (input.type === "text" || input.type === "email" || input.type === "date") {
+                if (input.value.trim() === "") {
+                    estaVacio = true;
+                }
             }
         });
         if (estaVacio === true) {
